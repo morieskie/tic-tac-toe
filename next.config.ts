@@ -2,9 +2,9 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  basePath: '/tac-tac-toe',
+  basePath: '/tic-tac-toe',
   output: 'export',
-  assetPrefix: "/tac-tac-toe",
+  assetPrefix: "/tic-tac-toe",
 };
 
 export default nextConfig;

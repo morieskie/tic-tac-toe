@@ -11,9 +11,7 @@ const BoardComponent = () => {
   const [turn, setTurn] = useState<0 | 1>(0);
   const [winner, setWinner] = useState<0 | 1>();
   const choices = (): Cell[][] =>
-    Array.from({ length: 3 }).map(() =>
-      Array.from({ length: 3 }, () => null)
-    );
+    Array.from({ length: 3 }).map(() => Array.from({ length: 3 }, () => null));
   const board = new Map<number, Cell>(
     Array.from({ length: 9 }, (_, index) => [index, null])
   );
@@ -136,42 +134,37 @@ const BoardComponent = () => {
 
   return (
     <>
-      <>
-        <div className="card  text-bg-primary">
-          <div className="card-header pt-3">
-            <h5>{getSubTitle()}</h5>
+      <div className="card  text-bg-primary">
+        <div className="card-header pt-3">
+          <h5 className=" text-light">{getSubTitle()}</h5>
 
-            <ProgressbarComponent progress={getProgress()} />
-          </div>
-          <div className="card-body pb-5">
-            {isEngaged && (
-              <div className="row row-cols-4 justify-content-center">
-                {[...grid].map(([idx, choice], index) => (
-                  <ChoiceComponent
-                    key={index}
-                    id={idx}
-                    selection={choice}
-                    onSelected={onSelected}
-                  />
-                ))}
-              </div>
-            )}
-            {!isEngaged && (
-              <div className="row justify-content-center">
-                <div className="col-12">
-                  <h3>Game Over!</h3>
-                  <button
-                    className="btn btn-success"
-                    onClick={() => resetGame()}
-                  >
-                    Start Game
-                  </button>
-                </div>
-              </div>
-            )}
-          </div>
+          <ProgressbarComponent progress={getProgress()} />
         </div>
-      </>
+        <div className="card-body pb-5">
+          {isEngaged && (
+            <div className="row row-cols-4 justify-content-center">
+              {[...grid].map(([idx, choice], index) => (
+                <ChoiceComponent
+                  key={index}
+                  id={idx}
+                  selection={choice}
+                  onSelected={onSelected}
+                />
+              ))}
+            </div>
+          )}
+          {!isEngaged && (
+            <div className="row justify-content-center">
+              <div className="col-12">
+                <h3>Game Over!</h3>
+                <button className="btn btn-success" onClick={() => resetGame()}>
+                  Start Game
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </>
   );
 };

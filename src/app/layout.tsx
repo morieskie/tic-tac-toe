@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         {/* <link href="http://cdn.delivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" /> */}
       </head>
-      <body>
+      <body className="bg-dark text-light">
         {children}
       </body>
     </html>

@@ -6,7 +6,7 @@ const GameComponent = () => {
       <main className="d-flex justify-content-center">
         <div className="container text-center">
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-4 col-sm-8 m-5 p-2">
+            <div className="col-lg-6 col-md-6 col-sm-8">
               <h1>Tic Tac Toe</h1>
               <BoardComponent />
             </div>
